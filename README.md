@@ -2,7 +2,7 @@
 
 ## Diagram
 
-![Diagram](diagram.png)
+![Diagram](Diagram.png)
 
 
 ## Docker compose
@@ -18,7 +18,7 @@ docker-compose up
 poetry install
 
 ```
-2. In the folder weather app run:
+2. Inside the folder weather_app run:
 ```bash
 uvicorn main:app --reload
 ```
