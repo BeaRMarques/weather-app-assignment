@@ -53,6 +53,15 @@ services:
       - postgresql
       - setup-producer
 
+  fastapi:
+    build:
+      context: .
+      dockerfile: Dockerfile-app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - create-table
+
 volumes:
   pgdata:
 

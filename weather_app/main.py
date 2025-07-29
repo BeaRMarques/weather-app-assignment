@@ -1,10 +1,10 @@
 from fastapi import FastAPI
 import json
 from sqlalchemy import create_engine, text
-from constants import POSTGRES_URL_LOCAL
+from constants import POSTGRES_URL
 
 app = FastAPI()
-engine = create_engine(POSTGRES_URL_LOCAL)
+engine = create_engine(POSTGRES_URL)
 
 
 @app.get("/precipitation_now")
