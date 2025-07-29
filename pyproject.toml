@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "weather_app"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+ipython = "^9.4.0"
+pyspark = "3.4.1"
+kafka-python = "^2.2.15"
+requests = "^2.32.4"
+v = "^1"
+sqlalchemy = "^2.0.41"
+psycopg2 = "^2.9.10"
+black = "^25.1.0"
+mypy = "^1.17.0"
+ruff = "^0.12.5"
+isort = "^6.0.1"
+fastapi = "^0.116.1"
+uvicorn = {extras = ["standard"], version = "^0.35.0"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+packages = [
+  { include = "constants", from = "weather_app/constants" }
+]
