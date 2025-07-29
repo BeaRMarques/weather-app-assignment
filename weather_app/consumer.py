@@ -1,5 +1,5 @@
 """
-Reads stream from kafka topic, processes it and writes it to postgres.
+Reads stream from kafka topic, processes it and writes it to PostgreSQL.
 """
 
 import logging

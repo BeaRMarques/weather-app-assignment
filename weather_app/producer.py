@@ -35,7 +35,7 @@ for n in range(5):
         logging.warning("Kafka not ready.")
         time.sleep((3**n) + 1)
 else:
-    logging.error("Could not connect to Kafka.")
+    logging.error("Could not connect to kafka.")
 
 
 existing_topics = admin_client.list_topics()
@@ -57,7 +57,6 @@ producer = KafkaProducer(
     bootstrap_servers=KAFKA_BOOTSTRAP_SERVER,
     value_serializer=lambda v: json.dumps(v).encode("utf-8"),
 )
-
 
 while True:
     for lat, lon in LOCATIONS:

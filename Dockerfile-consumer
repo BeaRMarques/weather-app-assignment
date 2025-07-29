@@ -6,8 +6,8 @@ RUN pip3 install pyspark==3.4.1 psycopg2-binary
 
 WORKDIR /app
 
-COPY weather_app/setup_consumer_spark.py .
+COPY weather_app/consumer.py .
 COPY weather_app/constants.py .
 
 
-CMD ["python3", "setup_consumer_spark.py"]
+CMD ["python3", "consumer.py"]
