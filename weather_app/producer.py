@@ -11,7 +11,6 @@ import time
 import requests
 from constants import (
     KAFKA_BOOTSTRAP_SERVER,
-    KAFKA_PORT,
     KAFKA_REPLICATION_FACTOR,
     KAFKA_TOPIC_NAME,
     KAKFA_NUMBER_PARTITIONS,
@@ -19,7 +18,7 @@ from constants import (
 )
 from kafka import KafkaProducer
 from kafka.admin import KafkaAdminClient, NewTopic
-from kafka.errors import NoBrokersAvailable, NodeNotReadyError, TopicAlreadyExistsError
+from kafka.errors import NoBrokersAvailable, NodeNotReadyError
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
@@ -31,7 +30,7 @@ for n in range(5):
     try:
         admin_client = KafkaAdminClient(bootstrap_servers=KAFKA_BOOTSTRAP_SERVER)
         break
-    except (NoBrokersAvailable, NodeNotReadyError) as e:
+    except (NoBrokersAvailable, NodeNotReadyError):
         logging.warning("Kafka not ready.")
         time.sleep((3**n) + 1)
 else:

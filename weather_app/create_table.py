@@ -5,9 +5,8 @@ import sys
 import time
 
 from constants import POSTGRES_TABLE, POSTGRES_URL
-from sqlalchemy import Column, DateTime, Float, Integer, String, create_engine
+from sqlalchemy import Column, Float, Integer, String, create_engine
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
@@ -33,7 +32,7 @@ for n in range(5):
         conn = engine.connect()
         conn.close()
         break
-    except Exception as e:
+    except Exception:
         logging.warning("Postgres database not ready.")
         time.sleep((2**n) + 1)
 else:

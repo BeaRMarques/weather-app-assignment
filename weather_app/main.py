@@ -1,5 +1,4 @@
 from fastapi import FastAPI
-import json
 from sqlalchemy import create_engine, text
 from constants import POSTGRES_URL
 

@@ -4,7 +4,6 @@ Reads stream from kafka topic, processes it and writes it to PostgreSQL.
 
 import logging
 import sys
-import time
 
 from constants import (
     KAFKA_BOOTSTRAP_SERVER,
@@ -12,12 +11,10 @@ from constants import (
     POSTGRES_DB,
     POSTGRES_PASSWORD,
     POSTGRES_PORT,
-    POSTGRES_TABLE,
-    POSTGRES_URL,
     POSTGRES_USER,
 )
 from pyspark.sql import DataFrame, SparkSession
-from pyspark.sql.functions import col, current_timestamp, explode, from_json, sum
+from pyspark.sql.functions import explode, from_json, sum
 from pyspark.sql.types import (
     ArrayType,
     FloatType,
@@ -25,7 +22,6 @@ from pyspark.sql.types import (
     StringType,
     StructField,
     StructType,
-    TimestampType,
 )
 
 logger = logging.getLogger(__name__)
